@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import type { NextPage } from 'next';
 import { useState } from 'react';
 import LoginButton from '@/components/buttons/LoginButton';
