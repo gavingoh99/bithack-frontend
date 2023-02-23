@@ -5,12 +5,14 @@ import { createContext, useState } from 'react';
 import '@/styles/globals.css';
 import Layout from '@/components/layout/Layout';
 
-/**
- * !STARTERCONF info
- * ? `Layout` component is called in every page using `np` snippets. If you have consistent layout across all page, you can add it here too
- */
-
-export const AppContext = createContext({});
+export const AppContext = createContext({
+  user: '',
+  setUser: () => null,
+  application: '',
+  setApplication: () => null,
+  postings: [],
+  setPostings: () => null,
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [user, setUser] = useState('');
