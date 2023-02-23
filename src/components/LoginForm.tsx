@@ -34,7 +34,6 @@ const LoginForm: FC<LoginFormProps> = ({ target }) => {
           `http://localhost:5001/postings/${postings[i]}`
         );
         response = await response.json();
-        console.log(response);
         result.push(response);
       }
       setPostings(result);

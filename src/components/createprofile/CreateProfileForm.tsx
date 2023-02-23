@@ -39,22 +39,22 @@ const CreateProfileForm: FC = () => {
         <div className='font-bold'>years of experience</div>
         <div className='flex justify-between'>
           <YOEBubble
-            yoe={'< 2 years'}
+            yoe='< 2 years'
             isSelected={selectedYOE == '< 2 years'}
             setSelectedYOE={setSelectedYOE}
           />
           <YOEBubble
-            yoe={'2 - 4 years'}
+            yoe='2 - 4 years'
             isSelected={selectedYOE == '2 - 4 years'}
             setSelectedYOE={setSelectedYOE}
           />
           <YOEBubble
-            yoe={'5 - 7 years'}
+            yoe='5 - 7 years'
             isSelected={selectedYOE == '5 - 7 years'}
             setSelectedYOE={setSelectedYOE}
           />
           <YOEBubble
-            yoe={'> 7 years'}
+            yoe='> 7 years'
             isSelected={selectedYOE == '> 7 years'}
             setSelectedYOE={setSelectedYOE}
           />

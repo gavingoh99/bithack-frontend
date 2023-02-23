@@ -1,5 +1,4 @@
 import { FC, useState } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 type SignUpFormProps = {
@@ -10,13 +9,12 @@ const SignUpForm: FC<SignUpFormProps> = ({ target }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const handleSignup = async () => {
-    let endpoint = target == 'user' ? 'signupapplicant' : 'signupcompany';
+    const endpoint = target == 'user' ? 'signupapplicant' : 'signupcompany';
     let response = await fetch(`http://localhost:5001/${endpoint}`, {
       method: 'POST',
       body: JSON.stringify({ username, password }),
     });
     response = await response.json();
-    console.log(response);
     alert('Sign up successful, Proceed to login!');
     router.push('/login');
   };

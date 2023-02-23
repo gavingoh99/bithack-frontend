@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Layout from '@/components/layout/Layout';
-import Link from 'next/link';
 import { AppContext } from '../_app';
 
 export default function UserPage() {
