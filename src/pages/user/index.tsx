@@ -22,7 +22,8 @@ export default function UserPage() {
   };
   React.useEffect(() => {
     fetchApplication();
-  }, [fetchApplication]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [yoe, setYOE] = React.useState();
   const [applicant_skills, setApplicantSkills] = React.useState('');
   return (

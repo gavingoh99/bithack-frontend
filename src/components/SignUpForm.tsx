@@ -10,11 +10,10 @@ const SignUpForm: FC<SignUpFormProps> = ({ target }) => {
   const [password, setPassword] = useState('');
   const handleSignup = async () => {
     const endpoint = target == 'user' ? 'signupapplicant' : 'signupcompany';
-    let response = await fetch(`http://localhost:5001/${endpoint}`, {
+    await fetch(`http://localhost:5001/${endpoint}`, {
       method: 'POST',
       body: JSON.stringify({ username, password }),
     });
-    response = await response.json();
     alert('Sign up successful, Proceed to login!');
     router.push('/login');
   };

@@ -1,5 +1,5 @@
-import { AppContext } from '@/pages/_app';
 import { FC, useContext } from 'react';
+import { AppContext } from '@/pages/_app';
 
 const Greeting: FC = () => {
   const { user } = useContext(AppContext);
