@@ -21,7 +21,7 @@ const SignUpForm: FC<SignUpFormProps> = ({ target }) => {
   };
   return (
     <div className='flex flex-col items-center gap-10 p-10'>
-      <div>{target} login</div>
+      <div>{target} sign up</div>
       <div className='flex items-center gap-5'>
         <div>username</div>
         <input
@@ -36,6 +36,7 @@ const SignUpForm: FC<SignUpFormProps> = ({ target }) => {
           className='rounded-3xl border border-black p-2'
           onChange={(event) => setPassword(event.target.value)}
           value={password}
+          type='password'
         />
       </div>
       <button

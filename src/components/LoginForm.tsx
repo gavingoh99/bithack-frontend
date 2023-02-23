@@ -59,6 +59,7 @@ const LoginForm: FC<LoginFormProps> = ({ target }) => {
           className='rounded-3xl border border-black p-2'
           onChange={(event) => setPassword(event.target.value)}
           value={password}
+          type='password'
         />
       </div>
       <button

@@ -10,7 +10,9 @@ const NavBar: FC = () => {
   const { user, application } = useContext(AppContext);
   return (
     <div className='flex justify-between p-5 font-bold'>
-      <Link href={`${application == '' ? '/company' : '/user'}`}>
+      <Link
+        href={`${user == '' ? '/' : application == '' ? '/company' : '/user'}`}
+      >
         Placeholder
       </Link>
       {user == '' ? <NavBarButtons /> : <Greeting />}
