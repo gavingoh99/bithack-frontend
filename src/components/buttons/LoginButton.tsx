@@ -16,8 +16,8 @@ const LoginButton: FC<LoginButtonProps> = ({
   return (
     <button
       onClick={() => setSelected(target)}
-      className={`rounded-3xl border border-black pt-2 pb-2 pl-5 pr-5 ${
-        isSelected ? 'bg-black text-white' : ''
+      className={`rounded-3xl border border-gray pt-2 pb-2 pl-5 pr-5 ${
+        isSelected ? 'bg-gray text-lightBeige' : 'text-gray'
       }`}
     >
       continue as {target}

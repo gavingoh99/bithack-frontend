@@ -24,6 +24,17 @@ module.exports = {
           900: 'rgb(var(--tw-color-primary-900) / <alpha-value>)',
         },
         dark: '#222222',
+        gray: '#aba5a3',
+        lightBeige: '#ece8e6',
+        powderRed: '#bf8d8d',
+        lightGray: '#e1e1e1',
+      },
+      flex: {
+        2: '2 2 0%',
+        3: '3 3 0%',
+      },
+      gridTemplateRows: {
+        10: 'repeat(10 minmax(0, 1fr))',
       },
       keyframes: {
         flicker: {

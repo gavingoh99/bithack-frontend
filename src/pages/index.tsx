@@ -1,13 +1,17 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import * as React from 'react';
 
+import LoginModal from '@/components/landing/LoginModal';
+import SignUpModal from '@/components/landing/SignUpModal';
 import Layout from '@/components/layout/Layout';
 
 export default function HomePage() {
   return (
     <Layout>
-      <div></div>
+      <div>
+        <SignUpModal />
+        <LoginModal />
+      </div>
     </Layout>
   );
 }
