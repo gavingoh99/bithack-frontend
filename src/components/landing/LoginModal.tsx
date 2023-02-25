@@ -11,34 +11,34 @@ import Credentials from './Credentials';
 import { useRouter } from 'next/router';
 
 const LoginModal: FC = () => {
-  const { modalOpen, setModalOpen, setUser, setPostings } =
+  const { modalOpen, setModalOpen, setUser, setPostings, setApplication } =
     useContext(AppContext);
   const [loginStage, setLoginStage] = useState(0);
-  const [usernameInput, setUsernameInput] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
   const resetForm = () => {
     setLoginStage(0);
-    setUsernameInput('');
+    setUsername('');
     setPassword('');
   };
   useEffect(() => {
     resetForm();
   }, [modalOpen]);
-  const handleSignUp = async () => {
+  const handleLogin = async () => {
     const endpoint = loginStage == 1 ? 'logincompany' : 'loginapplicant';
     let response = await fetch(
       `https://bithack-backend.onrender.com/${endpoint}`,
       {
         method: 'POST',
-        body: JSON.stringify({ username: usernameInput, password: password }),
+        body: JSON.stringify({ username, password }),
       }
     );
     response = await response.json();
-    const { username, postings } = response;
-    console.log(username);
-    setUser(username);
+    const { user, postings, application } = response;
+    setUser(user);
     setPostings(postings);
+    setApplication(application);
     setModalOpen(0);
     router.push(loginStage == 1 ? '/company' : '/user');
   };
@@ -67,15 +67,15 @@ const LoginModal: FC = () => {
           <Selection setRegistrationStage={setLoginStage} />
         ) : (
           <Credentials
-            username={usernameInput}
-            setUsername={setUsernameInput}
+            username={username}
+            setUsername={setUsername}
             password={password}
             setPassword={setPassword}
           />
         )}
         {loginStage != 0 && (
           <div className='flex  items-center text-xl font-bold'>
-            <button onClick={() => handleSignUp()}>continue</button>
+            <button onClick={() => handleLogin()}>continue</button>
           </div>
         )}
       </div>

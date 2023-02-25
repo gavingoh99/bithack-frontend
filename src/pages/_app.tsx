@@ -15,6 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [application, setApplication] = useState('');
   const [postings, setPostings] = useState([]);
   const [modalOpen, setModalOpen] = useState(0);
+  const [currPosting, setCurrPosting] = useState({});
   const appState = {
     user: user,
     setUser: setUser,
@@ -24,6 +25,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     setPostings: setPostings,
     modalOpen: modalOpen,
     setModalOpen: setModalOpen,
+    currPosting: currPosting,
+    setCurrPosting: setCurrPosting,
   };
   return (
     <Layout>

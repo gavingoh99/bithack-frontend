@@ -1,29 +1,47 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import JobDisplay from './JobDisplay';
 
 const JobBoard: FC = () => {
+  const jobs = [
+    { jobTitle: 'Frontend Developer', company: 'Shopee' },
+    { jobTitle: 'Frontend Developer', company: 'Tiktok' },
+    { jobTitle: 'Frontend Developer', company: 'Microsoft' },
+    { jobTitle: 'Fullstack Developer', company: 'Microsoft' },
+  ];
+  const [jobIndex, setJobIndex] = useState(1);
   return (
-    <div className='row-start-6 row-end-7 -mt-20 h-full w-full'>
-      <div className='text-xl font-bold'>Jobs</div>
-      <div className='mt-2 flex gap-16 font-bold'>
-        <div>Full Time</div>
-        <div className='text-lightGray'>Academia</div>
-        <div className='text-lightGray'>Freelance</div>
-      </div>
-      <div className='mt-2 flex h-full'>
-        <div className='flex flex-2 items-center gap-5 rounded-xl bg-lightGray p-5'>
-          <div className='bg-lightBeige p-6'></div>
-          <div className='flex flex-col font-bold'>
-            <div className='text-s'>Frontend Developer</div>
-            <div className='text-xs'>Microsoft</div>
-          </div>
-        </div>
+    <div className='row-start-6 row-end-7 h-full w-full'>
+      <div className=' flex h-full'>
+        <JobDisplay job={jobs[jobIndex]} />
         <div className='flex flex-1 items-center justify-evenly'>
-          <button className='rounded-full border border-gray bg-lightGray p-2 text-gray'>
+          <button
+            onClick={() =>
+              setJobIndex((prev) => {
+                if (prev - 1 < 0) {
+                  return jobs.length - 1;
+                } else {
+                  return prev - 1;
+                }
+              })
+            }
+            className='rounded-full border border-gray bg-lightGray p-2 text-gray'
+          >
             Prev
           </button>
-          <button className='rounded-full border border-gray bg-lightGray p-2 text-gray'>
+          <button
+            onClick={() =>
+              setJobIndex((prev) => {
+                if (prev + 1 > jobs.length - 1) {
+                  return 0;
+                } else {
+                  return prev + 1;
+                }
+              })
+            }
+            className='rounded-full border border-gray bg-lightGray p-2 text-gray'
+          >
             Next
           </button>
         </div>

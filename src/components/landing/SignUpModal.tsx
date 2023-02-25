@@ -12,11 +12,11 @@ import Credentials from './Credentials';
 const SignUpModal: FC = () => {
   const { modalOpen, setModalOpen } = useContext(AppContext);
   const [registrationStage, setRegistrationStage] = useState(0);
-  const [usernameInput, setUsernameInput] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const resetForm = () => {
     setRegistrationStage(0);
-    setUsernameInput('');
+    setUsername('');
     setPassword('');
   };
   useEffect(() => {
@@ -51,8 +51,8 @@ const SignUpModal: FC = () => {
           <Selection setRegistrationStage={setRegistrationStage} />
         ) : (
           <Credentials
-            username={usernameInput}
-            setUsername={setUsernameInput}
+            username={username}
+            setUsername={setUsername}
             password={password}
             setPassword={setPassword}
           />

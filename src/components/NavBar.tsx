@@ -14,7 +14,7 @@ const NavBar: FC = () => {
         href={`${user == '' ? '/' : application == '' ? '/company' : '/user'}`}
         className='text-2xl text-gray drop-shadow-sm'
       >
-        Placeholder
+        Hustle
       </Link>
       {user == '' ? <NavBarButtons /> : <Greeting />}
     </div>
